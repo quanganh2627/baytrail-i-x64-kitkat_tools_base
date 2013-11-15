@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+          "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+          "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+<module name="Checker">
+
+  <!-- Checks for trailing spaces in the end of line -->
+  <!-- See http://checkstyle.sf.net/config_misc.html -->
+  <module name="RegexpSingleline">
+    <property name="format" value="\s+$"/>
+    <property name="minimum" value="0"/>
+    <property name="maximum" value="0"/>
+    <property name="message" value="Line has trailing spaces."/>
+  </module>
+
+  <module name="TreeWalker">
+
+    <!-- Checks for imports order                        -->
+    <!-- See http://checkstyle.sf.net/config_import.html -->
+    <module name="ImportOrder">
+    <!-- <property name="groups" value="/^android\./,
+com,junit,net,org,/javax?/"/> order adviced by Google -->
+      <property name="groups" value=""/>
+      <property name="ordered" value="true"/>
+      <property name="separated" value="true"/>
+      <property name="option" value="top"/>
+      <property name="caseSensitive" value="true"/>
+    </module>
+
+    <!-- Checks for line length                         -->
+    <!-- See http://checkstyle.sf.net/config_sizes.html -->
+    <module name="LineLength">
+      <property name="max" value="100"/>
+    </module>
+
+    <!-- Checks for whitespace after comma and semicolon     -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="WhitespaceAfter">
+      <property name="tokens" value="COMMA, SEMI, TYPECAST"/>
+    </module>
+    <!-- Checks for whitespace around operators              -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="WhitespaceAround">
+    </module>
+    <!-- Checks the padding of an empty for iterator initializer -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html     -->
+    <module name="EmptyForInitializerPad">
+    </module>
+    <!-- Checks the padding of an empty for iterator         -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="EmptyForIteratorPad">
+    </module>
+    <!--Checks for whitespace before some tokens             -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="NoWhitespaceBefore">
+      <property name="tokens" value="SEMI,POST_DEC, POST_INC"/>
+    </module>
+    <!--Checks for whitespace after some tokens              -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="NoWhitespaceAfter">
+      <property name="tokens" value="DEC, INC"/>
+    </module>
+
+    <!--Checks for OperatorWrap                              -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="OperatorWrap">
+      <property name="tokens" value="BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, EQUAL, GE, GT, LAND, LE, LITERAL_INSTANCEOF, LOR, LT, MINUS, MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, SL, SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN"/>
+      <property name="option" value="nl"/>
+    </module>
+    <module name="OperatorWrap">
+      <property name="tokens" value="ASSIGN"/>
+      <property name="option" value="eol"/>
+    </module>
+
+    <!-- Checks for whitespace for method                    -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="MethodParamPad"/>
+
+    <!--Checks for indentation                         -->
+    <!-- See http://checkstyle.sf.net/config_misc.html -->
+    <module name="Indentation">
+      <property name="basicOffset" value="4"/>
+    </module>
+
+    <!-- Checks for Javadoc comments.                     -->
+    <!-- See http://checkstyle.sf.net/config_javadoc.html -->
+    <!--
+    <module name="JavadocMethod">
+        <property name="allowMissingPropertyJavadoc" value="true"/>
+        <property name="allowMissingParamTags" value="true"/>
+        <property name="allowMissingReturnTag" value="true"/>
+    </module>
+    Temporary remove-->
+    <!--
+    <module name="JavadocType"/>
+    <module name="JavadocStyle"/>
+    too many javadoc problem, so remove them-->
+
+    <!-- Checks for Naming Conventions.                  -->
+    <!-- See http://checkstyle.sf.net/config_naming.html -->
+    <!-- non-static fields, start with character 'm' -->
+    <module name="MemberName">
+      <property name="format" value="^m[A-Z][a-zA-Z0-9]*$"/>
+    </module>
+    <!-- static, non-final fields                        -->
+    <module name="StaticVariableName">
+      <property name="format" value="^s[A-Z][a-zA-Z0-9]*$"/>
+    </module>
+
+    <!-- constant name                                   -->
+    <!--
+    <module name="ConstantName"/>
+    duplicate with PMD rule SuspiciousConstantFieldName  -->
+
+    <!-- Checks for blocks. You know, those {}'s         -->
+    <!-- See http://checkstyle.sf.net/config_blocks.html -->
+    <module name="LeftCurly"/>
+    <!--
+    <module name ="NeedBraces">
+        <property name="tokens" value="LITERAL_IF, LITERAL_ELSE"/>
+    </module> -->
+
+    <!-- Checks for imports                              -->
+    <!-- See http://checkstyle.sf.net/config_import.html -->
+    <module name="AvoidStarImport"/>
+    <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
+    <module name="RedundantImport"/>
+    <module name="UnusedImports"/>
+
+    <!-- Checks for common coding problems               -->
+    <!-- See http://checkstyle.sf.net/config_coding.html -->
+    <module name="IllegalCatch"/>
+
+    <!-- Checks for trailing comment                     -->
+    <!-- See http://checkstyle.sf.net/config_misc.html   -->
+    <module name="TrailingComment">
+    </module>
+  </module>
+
+
+</module> 
